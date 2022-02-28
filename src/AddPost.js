@@ -11,7 +11,7 @@ const AddPost = () => {
 			{
 				id: newVal,
 				title: `Post ${newVal}`,
-				body: `This is post ${newVal}`,
+				body: newPost,
 			},
 		]);
 	};

@@ -3,6 +3,9 @@ import { PostContext } from './PostContext';
 
 const PostList = () => {
 	const [posts, setPosts] = useContext(PostContext);
+	const deleteHandler = (id) => {
+		setPosts(posts.filter((post) => post.id !== id));
+	};
 	console.log(posts);
 	return (
 		<div>
@@ -15,8 +18,9 @@ const PostList = () => {
 					}}
 					key={post.id}
 				>
-					<h3>{post.title}</h3>
 					<p>{post.body}</p>
+					<button onClick={() => deleteHandler(post.id)}>Delete</button>
+					
 				</div>
 			))}
 		</div>
